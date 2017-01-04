@@ -6,8 +6,8 @@ var Message = require('../models/message');
 router.post('/', function (req, res, next) {
     var message = new Message({
       content: req.body.content
-    })
-    message.save((err, result) => {
+    });
+    message.save(function(err, result) {
       if (err) {
         return res.status(500).json({
           title: 'An error occured',
